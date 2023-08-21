@@ -9,63 +9,66 @@
       [formGroup]="registerForm"
       (ngSubmit)="proceedRegistration()"
     >
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>User name</mat-label>
-        <input matInput formControlName="id" type="text" />
-        <mat-icon matSuffix color="primary">account_circle</mat-icon>
-        <!-- <mat-hint>Hint</mat-hint> -->
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input
-          matInput
-          formControlName="name"
-        />
-        <mat-icon matSuffix color="primary">person</mat-icon>
-        <!-- <mat-hint>Hint</mat-hint> -->
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          formControlName="password"
-          type="password"
-          />
-          <mat-icon matSuffix color="primary">lock</mat-icon>
-          <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
-      </p>
-    <p>
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          formControlName="email"
-          type="email"
-          />
-          <mat-icon matSuffix color="primary">mail</mat-icon>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User name</mat-label>
+          <input matInput formControlName="id" type="text" />
+          <mat-icon matSuffix color="primary">account_circle</mat-icon>
           <!-- <mat-hint>Hint</mat-hint> -->
         </mat-form-field>
       </p>
       <p>
-        <span><h2>Gender</h2>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-icon matSuffix color="primary">person</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" />
+          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" />
+          <mat-icon matSuffix color="primary">mail</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <div>
+        <div class="gender-container">
+          <span>Gender:</span>
           <mat-radio-group aria-label="Select an option" formArrayName="gender">
-            <mat-radio-button value="male"><mat-icon matSuffix color="primary">man_4</mat-icon></mat-radio-button>
-            <mat-radio-button value="female"><mat-icon matSuffix color="accent">woman_2</mat-icon></mat-radio-button>
+            <mat-radio-button value="male"
+              ><mat-icon matSuffix color="primary"
+                >man_4</mat-icon
+              ></mat-radio-button
+            >
+            <mat-radio-button value="female"
+              ><mat-icon matSuffix color="accent">woman_2</mat-icon>
+            </mat-radio-button>
           </mat-radio-group>
-        </span>
-        </p>
+        </div>
+      </div>
+      <hr />
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">
+          <mat-icon>send</mat-icon>
+          Submit
+        </button>
+        <a routerLink="/login" mat-raised-button>
+        <mat-icon>
+          keyboard_backspace
+        </mat-icon>
+          Back to login
+        </a>
+      </div>
     </form>
   </mat-card-content>
-  <mat-card-actions>
-    <div class="example-button-row">
-    <button mat-raised-button color="primary">Submit</button>
-    <a routerLink="/login" mat-raised-button >Back to login</a>
-    </div>
-  </mat-card-actions>
 </mat-card>

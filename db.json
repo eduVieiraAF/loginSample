@@ -1,3 +1,22 @@
 {
-  "user": []
+  "user": [
+    {
+      "id": "admin",
+      "name": "Admin User",
+      "password": "Umdois@3456",
+      "email": "admin@email.net",
+      "gender": "male",
+      "role": "",
+      "isActive": false
+    },
+    {
+      "id": "eduVieiraAF",
+      "name": "Eduardo Vieira A. Fonseca",
+      "password": "eduVieira@123",
+      "email": "edu@edu.edu",
+      "gender": "male",
+      "role": "",
+      "isActive": false
+    }
+  ]
 }

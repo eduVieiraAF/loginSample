@@ -1,0 +1,17 @@
+.example-button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.example-button-row button {
+  margin: 8px;
+}
+
+.gender-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

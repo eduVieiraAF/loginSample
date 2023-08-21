@@ -15,7 +15,7 @@ export class RegisterComponent {
     private toastr: ToastrService,
     private service: AuthService,
     private router: Router
-    ) {
+  ) {
   }
 
   registerForm = this.builder.group({
@@ -39,11 +39,15 @@ export class RegisterComponent {
 
   proceedRegistration() {
     if (this.registerForm.valid) {
-      this.service.saveUser(this.registerForm.value).subscribe( (res => {
-        this.toastr.success("User saved!", "Contact admin to activate this account...")
+      this.service.saveUser(this.registerForm.value).subscribe((res => {
+        this.toastr.success("Contact admin to activate this account...", "USER SAVED", {
+          positionClass: 'toast-top-center'
+        })
         this.router.navigate(['login'])
       }))
     }
-    else this.toastr.error("Please enter valid data")
+    else this.toastr.warning("Please enter valid data", "INVALID",
+    { positionClass: 'toast-top-center' }
+    )
   }
 }
