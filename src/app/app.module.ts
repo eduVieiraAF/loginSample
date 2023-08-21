@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserlistingComponent } from './userlisting/userlisting.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
 
 @NgModule({
@@ -33,7 +34,10 @@ import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
     HttpClientModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' }, }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
