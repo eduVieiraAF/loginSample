@@ -24,5 +24,9 @@ export class AuthService {
   updateUser(id: any, data: any) {
     return this.http.put(`${ this.APIURL }/${ id }`, data)
   }
+
+  deleteUser(id: any) {
+    return this.http.delete(`${ this.APIURL }/${ id }`)
+  }
 }
 

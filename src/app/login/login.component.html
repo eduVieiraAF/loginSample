@@ -1,10 +1,41 @@
-<div>
+<div class="head">
   <h1>Login</h1>
 </div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>User credentials</mat-card-title>
+  </mat-card-header>
+  <hr />
+  <mat-card-content>
+    <form appearance="outline" [formGroup]="loginForm" (ngSubmit)="proceedLogin()">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User name</mat-label>
+          <input matInput formControlName="username" type="text" />
+          <mat-icon matSuffix color="primary">account_circle</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" />
+          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </p>
 
-<a routerLink="/register" mat-raised-button color="primary">
-<mat-icon>
-  person_add
-</mat-icon>
-  Register
-</a>
+      <hr />
+      <div class="example-button-row">
+        <button mat-raised-button color="primary">
+          <mat-icon>send</mat-icon>
+          Login
+        </button>
+        <a routerLink="/register" mat-raised-button>
+          <mat-icon> person_add </mat-icon>
+          Register
+        </a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

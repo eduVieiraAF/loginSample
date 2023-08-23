@@ -6,8 +6,8 @@
       "password": "Umdois@3456",
       "email": "admin@email.net",
       "gender": "male",
-      "role": "",
-      "isActive": false
+      "role": "admin",
+      "isActive": true
     },
     {
       "id": "eduVieiraAF",
@@ -17,6 +17,41 @@
       "gender": "male",
       "role": "",
       "isActive": false
+    },
+    {
+      "username": "admin",
+      "password": "Umdois@3456",
+      "id": "MewQwnm"
+    },
+    {
+      "username": "admin",
+      "password": "Umdois@3456",
+      "id": "CjA7k8A"
+    },
+    {
+      "username": "kjfa",
+      "password": "dsalkflkdsfklsaf",
+      "id": "ElDWRt0"
+    },
+    {
+      "username": "admin",
+      "password": "125456",
+      "id": "5dhxK-0"
+    },
+    {
+      "username": "admin",
+      "password": "125456",
+      "id": "s0b-X4V"
+    },
+    {
+      "username": "edu",
+      "password": "12346",
+      "id": "VyrZ7tY"
+    },
+    {
+      "username": "admin",
+      "password": "45789",
+      "id": "_BhWjmP"
     }
   ]
 }
