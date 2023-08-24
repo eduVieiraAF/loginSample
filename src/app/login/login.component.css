@@ -1,0 +1,18 @@
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px ;
+}
+
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 7px;
+}

@@ -27,33 +27,29 @@ export class LoginComponent {
   proceedLogin() {
     if (this.loginForm.valid) {
       this.service.getUserById(this.loginForm.value.username).subscribe((res) => {
-          this.userData = res;
-          if (this.userData.id === this.loginForm.value.username) {
-            if (this.userData.password === this.loginForm.value.password) {
-              if (this.userData.isActive) {
-                sessionStorage.setItem('username', this.userData.id);
-                sessionStorage.setItem('role', this.userData.role);
+        this.userData = res;
+        if (this.userData.id === this.loginForm.value.username) {
+          if (this.userData.password === this.loginForm.value.password) {
+            if (this.userData.isActive) {
+              sessionStorage.setItem('username', this.userData.id);
+              sessionStorage.setItem('role', this.userData.role);
 
-                this.toastr.success("Login Successful", "LOGIN", {
-                  positionClass: 'toast-top-center'
-                });
-                this.router.navigate(['user']);
-              } else {
-                this.toastr.error("User is not active, please contact admin", "INACTIVE USER", {
-                  positionClass: 'toast-top-center'
-                });
-              }
+              this.toastr.success("Login Successful", "LOGIN", {
+                positionClass: 'toast-top-center'
+              });
+              this.router.navigate(['user']);
             } else {
-              this.toastr.error("Invalid credentials", "INVALID CREDENTIALS", {
+              this.toastr.warning("User is not active, please contact admin", "INACTIVE USER", {
                 positionClass: 'toast-top-center'
               });
             }
           } else {
-            this.toastr.error("User does not exist", "USER NOT FOUND", {
+            this.toastr.error("Invalid password", "NOT ALLOWED", {
               positionClass: 'toast-top-center'
             });
           }
-        },
+        }
+      },
         (error) => {
           console.error(error);
           this.toastr.error("User does not exist", "USER NOT FOUND", {
