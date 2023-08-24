@@ -52,7 +52,7 @@ export class LoginComponent {
       },
         (error) => {
           console.error(error);
-          this.toastr.error("User does not exist", "USER NOT FOUND", {
+          this.toastr.error("User does not exist", "NOT FOUND", {
             positionClass: 'toast-top-center'
           });
         }

@@ -1,4 +1,24 @@
 .content {
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 7px;
+  align-items: center;
+  background-color: rgb(15, 77, 139);
+}
+
+h1 {
+  margin: 15px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
 }

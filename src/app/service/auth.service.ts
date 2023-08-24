@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  APIURL ='http://localhost:3000/user'
+  APIURL = 'http://localhost:3000/user'
+
   constructor(private http: HttpClient) { }
 
   getAllUsers() {
@@ -14,7 +15,7 @@ export class AuthService {
 
   getUserById(id: any) {
     // return this.http.get(this.APIURL + '/' + id)
-    return this.http.get(`${ this.APIURL }/${ id }`)
+    return this.http.get(`${this.APIURL}/${id}`)
   }
 
   saveUser(data: any) {
@@ -22,11 +23,19 @@ export class AuthService {
   }
 
   updateUser(id: any, data: any) {
-    return this.http.put(`${ this.APIURL }/${ id }`, data)
+    return this.http.put(`${this.APIURL}/${id}`, data)
   }
 
   deleteUser(id: any) {
-    return this.http.delete(`${ this.APIURL }/${ id }`)
+    return this.http.delete(`${this.APIURL}/${id}`)
+  }
+
+  isLogged() {
+    return sessionStorage.getItem('username') != null
+  }
+
+  getUserRole() {
+    return sessionStorage.getItem('userrole') != null? sessionStorage.getItem('userrle')?.toString() : ""
   }
 }
 
