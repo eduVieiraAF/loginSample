@@ -1,9 +1,12 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar" *ngIf="isMenuRequired" role="banner">
   <a routerLink=""
     ><img width="40" alt="Angular Logo" src="../assets/application.png"
   /></a>
   <a routerLink=""><h1>Welcome</h1></a>
+  <a routerLink="/user"><h1>User</h1></a>
+  <div class="spacer"></div>
+  <a routerLink="/login"><h1>Logout</h1></a>
 </div>
 <!-- content -->
 <div class="content" role="main">
