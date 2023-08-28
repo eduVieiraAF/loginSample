@@ -36,6 +36,11 @@ export class UserlistingComponent implements AfterViewInit {
     // return this.service.updateUser(id)
     console.log(id)
   }
+
+  deleteUser(id: any) {
+    // return this.service.deleteUser(id)
+    console.log(`Bye-bye ${id}`)
+  }
 }
 
 export interface PeriodicElement {
@@ -67,3 +72,5 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
   { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
 ];
+
+
