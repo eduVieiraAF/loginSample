@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { UserlistingComponent } from './userlisting/userlisting.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import { MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
     LoginComponent,
     HomeComponent,
     UserlistingComponent,
-    UpdatepopupComponent
+    UpdatepopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,9 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [
     { provide: MAT_RADIO_DEFAULT_OPTIONS,
