@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../service/auth.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
@@ -12,7 +13,7 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
   styleUrls: ['./userlisting.component.css'],
 })
 export class UserlistingComponent implements AfterViewInit {
-  constructor(private service: AuthService, private dialog: MatDialog) {
+  constructor(private service: AuthService, private dialog: MatDialog, private toast: ToastrService) {
     this.LoadUser()
   }
 
@@ -53,7 +54,11 @@ export class UserlistingComponent implements AfterViewInit {
   }
 
   deleteUser(id: any) {
-    this.service.deleteUser(id)
-    console.log(`Bye-bye ${id}`)
+    this.service.deleteUser(id).subscribe(() => {
+      this.toast.success("This user has been deleted...", "USER DELETED", {
+        positionClass: 'toast-top-center'
+      })
+      this.LoadUser()
+    })
   }
 }
