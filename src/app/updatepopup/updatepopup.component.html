@@ -12,11 +12,23 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>User name</mat-label>
-          <input matInput formControlName="id" type="text" />
+          <input class="readonly" matInput formControlName="id" type="text" readonly />
           <mat-icon matSuffix color="primary">account_circle</mat-icon>
           <!-- <mat-hint>Hint</mat-hint> -->
-        </mat-form-field>
+        </mat-form-field >
       </p>
+      <div class="active">
+
+          <mat-slide-toggle formControlName="isActive">Active</mat-slide-toggle>
+
+      </div>
+      <div class="role-container">
+        <span>Role:</span>
+        <mat-radio-group aria-label="Select an option" formControlName="role">
+          <mat-radio-button value="admin">Admin</mat-radio-button>
+          <mat-radio-button value="">User </mat-radio-button>
+        </mat-radio-group>
+      </div>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -36,7 +48,10 @@
       <div>
         <div class="gender-container">
           <span>Gender:</span>
-          <mat-radio-group aria-label="Select an option" formControlName="gender">
+          <mat-radio-group
+            aria-label="Select an option"
+            formControlName="gender"
+          >
             <mat-radio-button value="male"
               ><mat-icon matSuffix color="primary"
                 >man_4</mat-icon
@@ -47,15 +62,15 @@
             </mat-radio-button>
           </mat-radio-group>
         </div>
-        <mat-checkbox class="example-margin" formControlName="isActive">Is active</mat-checkbox>
       </div>
+
       <hr />
       <div class="example-button-row">
         <button mat-raised-button color="primary">
           <mat-icon>send</mat-icon>
           Update
         </button>
-        <a  mat-dialog-close mat-raised-button>
+        <a mat-dialog-close mat-raised-button>
           <mat-icon> keyboard_backspace </mat-icon>
           Go back
         </a>

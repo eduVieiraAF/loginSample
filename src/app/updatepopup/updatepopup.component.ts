@@ -39,13 +39,15 @@ export class UpdatepopupComponent implements OnInit {
   }
 
   registerForm = this.builder.group({
-    id: this.builder.control(''),
-    name: this.builder.control(''),
-    email: this.builder.control(''),
+    id: this.builder.control('', Validators.required),
+    name: this.builder.control(', ', Validators.required),
+    email: this.builder.control('',  Validators.required),
     gender: this.builder.control('male'),
     role: this.builder.control(''),
     isActive: this.builder.control(false)
   })
+
+  role = ['admin', 'user']
 
   updateUser() {
     if (this.registerForm.valid) {

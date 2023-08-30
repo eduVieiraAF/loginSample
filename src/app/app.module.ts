@@ -14,8 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { UserlistingComponent } from './userlisting/userlisting.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
-import { MatPaginatorModule} from '@angular/material/paginator';
-import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
+import { MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS } from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -39,8 +41,18 @@ import { MatTableModule} from '@angular/material/table';
     MatTableModule
   ],
   providers: [
-    { provide: MAT_RADIO_DEFAULT_OPTIONS,
-      useValue: { color: 'primary' }, }
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    },
+    {
+      provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    },
+    {
+      provide: MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    }
   ],
   bootstrap: [AppComponent]
 })

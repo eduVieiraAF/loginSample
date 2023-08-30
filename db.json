@@ -11,12 +11,12 @@
     },
     {
       "id": "eduVieiraAF",
-      "name": "Eduardo Vieira A. Fonseca",
+      "name": "Eduardos",
       "email": "edu@edu.edu",
       "password": "Umdois@3456",
       "gender": "male",
       "role": "",
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "eduVieira",
@@ -25,7 +25,7 @@
       "email": "edu2@email.net",
       "gender": "male",
       "role": "",
-      "isActive": true
+      "isActive": false
     },
     {
       "id": "eduVieira3",
@@ -40,8 +40,8 @@
       "id": "eduVieira4",
       "name": "eduardo 4s",
       "password": "Umdois@3456",
-      "email": "edu4@email.com",
-      "gender": "male",
+      "email": "edu4@email.com.br",
+      "gender": "female",
       "role": "",
       "isActive": false
     },
@@ -52,7 +52,7 @@
       "email": "edu@edu5.ca",
       "gender": "male",
       "role": "",
-      "isActive": false
+      "isActive": true
     }
   ]
 }
