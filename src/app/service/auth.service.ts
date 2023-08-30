@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   updateUser(id: any, data: any) {
-    return this.http.put(`${this.APIURL}/${id}`, data)
+    return this.http.patch(`${this.APIURL}/${id}`, data)
   }
 
   deleteUser(id: any) {

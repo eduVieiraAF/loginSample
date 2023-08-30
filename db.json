@@ -3,8 +3,8 @@
     {
       "id": "admin",
       "name": "Admin User",
-      "password": "Umdois@3456",
       "email": "admin@email.net",
+      "password": "Umdois@3456",
       "gender": "male",
       "role": "admin",
       "isActive": true
@@ -12,11 +12,11 @@
     {
       "id": "eduVieiraAF",
       "name": "Eduardo Vieira A. Fonseca",
-      "password": "eduVieira@123",
       "email": "edu@edu.edu",
+      "password": "Umdois@3456",
       "gender": "male",
       "role": "",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": "eduVieira",
@@ -25,11 +25,11 @@
       "email": "edu2@email.net",
       "gender": "male",
       "role": "",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": "eduVieira3",
-      "name": "eduardo 3",
+      "name": "eduardo 33",
       "password": "Umdois@3456",
       "email": "edu3@email.com",
       "gender": "male",
@@ -38,7 +38,7 @@
     },
     {
       "id": "eduVieira4",
-      "name": "eduardo 4",
+      "name": "eduardo 4s",
       "password": "Umdois@3456",
       "email": "edu4@email.com",
       "gender": "male",

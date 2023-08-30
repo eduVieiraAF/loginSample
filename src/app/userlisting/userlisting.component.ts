@@ -16,7 +16,7 @@ export class UserlistingComponent implements AfterViewInit {
     this.LoadUser()
   }
 
-  displayedColumns: string[] = ['username', 'name', 'role', 'email', 'status', 'action'];
+  displayedColumns: string[] = ['username', 'name', 'role', 'gender', 'email', 'status', 'action'];
   dataSource: any
 
   userList: any;
@@ -40,22 +40,20 @@ export class UserlistingComponent implements AfterViewInit {
   }
 
   updateUser(id: any) {
-    this.dialog.open(UpdatepopupComponent, {
+    const popup =this.dialog.open(UpdatepopupComponent, {
       enterAnimationDuration: '500ms',
       exitAnimationDuration: '500ms',
       data: {
         id
       }
     })
-    console.log(id)
+    popup.afterClosed().subscribe(() => {
+      this.LoadUser()
+    })
   }
 
   deleteUser(id: any) {
     this.service.deleteUser(id)
     console.log(`Bye-bye ${id}`)
-  }
-
-  openDialog(id: any) {
-
   }
 }

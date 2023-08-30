@@ -1,33 +1,63 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../service/auth.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-updatepopup',
   templateUrl: './updatepopup.component.html',
   styleUrls: ['./updatepopup.component.css']
 })
-export class UpdatepopupComponent implements OnInit{
+export class UpdatepopupComponent implements OnInit {
 
-  constructor(private builder: FormBuilder, private service: AuthService) { }
+  constructor(
+    private builder: FormBuilder,
+    private service: AuthService,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialogRef: MatDialogRef<UpdatepopupComponent>,
+    private toastr: ToastrService
+  ) { }
+
+  editedData: any
 
   ngOnInit(): void {
-    
+    if (this.data.id != null && this.data.id != '') {
+      this.service.getUserById(this.data.id).subscribe((res) => {
+        this.editedData = res
+        this.registerForm.setValue({
+          id: this.editedData.id,
+          name: this.editedData.name,
+          email: this.editedData.email,
+          gender: this.editedData.gender,
+          role: this.editedData.role,
+          isActive: this.editedData.isActive
+        })
+      })
+    }
   }
 
   registerForm = this.builder.group({
     id: this.builder.control(''),
     name: this.builder.control(''),
-    password: this.builder.control(''),
     email: this.builder.control(''),
     gender: this.builder.control('male'),
-    role: this.builder.control('', Validators.required),
+    role: this.builder.control(''),
     isActive: this.builder.control(false)
   })
 
   updateUser() {
-    console.log(this.registerForm.value)
+    if (this.registerForm.valid) {
+      this.service.updateUser(this.registerForm.value.id, this.registerForm.value).subscribe((res) => {
+        this.toastr.success("This user has been updated", "USER UPDATED", {
+          positionClass: 'toast-top-center'
+        })
+        this.dialogRef.close()
+      })
+    }
+    else this.toastr.warning("Please enter valid data", "INVALID",
+      { positionClass: 'toast-top-center' }
+    )
   }
 }
