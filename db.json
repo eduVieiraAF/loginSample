@@ -17,6 +17,42 @@
       "gender": "male",
       "role": "",
       "isActive": false
+    },
+    {
+      "id": "eduVieira",
+      "name": "Eduardo",
+      "password": "Umdois@3456",
+      "email": "edu2@email.net",
+      "gender": "male",
+      "role": "",
+      "isActive": false
+    },
+    {
+      "id": "eduVieira3",
+      "name": "eduardo 3",
+      "password": "Umdois@3456",
+      "email": "edu3@email.com",
+      "gender": "male",
+      "role": "",
+      "isActive": false
+    },
+    {
+      "id": "eduVieira4",
+      "name": "eduardo 4",
+      "password": "Umdois@3456",
+      "email": "edu4@email.com",
+      "gender": "male",
+      "role": "",
+      "isActive": false
+    },
+    {
+      "id": "eduVieira5",
+      "name": "eduardo 5",
+      "password": "Umdois@3456",
+      "email": "edu@edu5.ca",
+      "gender": "male",
+      "role": "",
+      "isActive": false
     }
   ]
 }
